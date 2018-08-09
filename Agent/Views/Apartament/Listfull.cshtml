@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Список квартир";
+}
+
+<h2>Список</h2>
+
+@model IEnumerable<Agent.Models.Apartament>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div>
+    <h3>Posts</h3>
+    <table>
+        <tr class="header">
+            <td><p>Имя </p></td>
+            <td><p>Адресс</p></td>
+            <td><p>Айди</p></td>
+            <td><p>Комнат</p></td>
+            <td><p>Цена</p></td>
+            <td><p>Площадь</p></td>
+            <td><p>Описание</p></td>
+            <td></td>
+        </tr>
+        @foreach (var b in ViewBag.Apartament)
+        {
+        <tr>
+            <td><p>@b.Name</p></td>
+            <td><p>@b.Adress</p></td>
+            <td><p>@b.Id</p></td>
+            <td><p>@b.Rooms</p></td>
+            <td><p>@b.Price</p></td>
+            <td><p>@b.Surface</p></td>
+            <td><p>@b.Description</p></td>
+        </tr>
+}
+    </table>
+</div>

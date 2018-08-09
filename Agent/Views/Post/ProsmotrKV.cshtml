@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Prosmotr Base Date";
+}
+
+@model IEnumerable<Agent.Models.Post>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <h3>Posts</h3>
+    <table>
+        <tr class="header">
+            <td><p>Имя </p></td>
+            <td><p>Price</p></td>
+            <td><p>Id</p></td>
+            <td><p>Ploshad</p></td>
+            <td><p>Opisanie</p></td>
+            <td></td>
+        </tr>
+        @foreach (Agent.Models.Post b in Model)
+        {
+            <tr>
+                <td><p>@b.Name</p></td>
+                <td><p>@b.Price</p></td>
+                <td><p>@b.Id</p></td>
+                <td><p>@b.Ploshad</p></td>
+                <td><p>@b.Opisanie</p></td>
+            </tr>
+        }
+    </table>
+</div>
+
+<p>
+    @Html.ActionLink("Back to add", "Posting")
+</p>
